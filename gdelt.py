@@ -107,7 +107,7 @@ class GDELTAccessor(object):
     def __next__(self):
         try:
             dt_current = self.dt_iter.pop(0)
-            return self._get_df_selection(self.accessor_consts.make_url(dt_current))
+            return dt_current, self._get_df_selection(self.accessor_consts.make_url(dt_current))
         except IndexError:
             raise StopIteration
 
